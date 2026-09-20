@@ -1,0 +1,8 @@
+{
+  "name": "เครื่องมือวางแผนเกษียณ",
+  "short_name": "Retirement",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#123a6b"
+}
