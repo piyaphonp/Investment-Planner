@@ -1,45 +1,33 @@
 <!doctype html>
 <html lang="th">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#123a6b">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Retirement">
-<link rel="manifest" href="manifest.webmanifest">
-<title>เครื่องมือวางแผนเกษียณ</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123a6b"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest"><title>Retirement Planner V2</title>
 <style>
-:root{--navy:#123a6b;--blue:#2d63a7;--green:#197a55;--bg:#f4f7fb;--card:#fff;--text:#1f2937;--muted:#667085;--line:#d7dee8}
-*{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--text);background:var(--bg);padding:18px}
-.wrap{max-width:980px;margin:auto}
-.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:24px;border-radius:20px;margin-bottom:18px}
-h1{margin:0 0 6px;font-size:clamp(26px,5vw,38px)}
-.hero p{margin:0;opacity:.92}
-.card{background:var(--card);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 4px 18px rgba(0,0,0,.07)}
-h2{margin-top:0;color:var(--navy)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-label{display:block;font-weight:700;margin-bottom:7px}
-.hint{font-size:13px;color:var(--muted);margin-top:5px}
-input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font-size:18px}
-button{width:100%;margin-top:18px;padding:15px;border:0;border-radius:11px;background:var(--green);color:#fff;font-size:20px;font-weight:700}
-.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.result{border-left:6px solid var(--blue);background:#f7f9fc;padding:16px;border-radius:12px}
-.result strong{display:block;color:var(--navy);font-size:clamp(21px,4vw,28px);margin-top:8px}
-.result.major{border-left-color:var(--green);background:#eef8f3}
-.result.major strong{color:var(--green)}
-.note{font-size:14px;line-height:1.65;color:var(--muted)}
-.footer{text-align:center;color:var(--muted);font-size:12px;padding:8px 0 16px}
-@media(max-width:720px){body{padding:10px}.grid,.results{grid-template-columns:1fr}.card{padding:16px}}
+:root{--n:#123a6b;--b:#2d63a7;--g:#197a55;--bg:#f4f7fb;--m:#667085;--l:#d7dee8}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:#1f2937;padding:18px}
+.wrap{max-width:1050px;margin:auto}.hero{background:linear-gradient(135deg,var(--n),var(--b));color:#fff;padding:24px;border-radius:20px}
+h1{margin:0 0 6px;font-size:clamp(26px,5vw,38px)}.hero p{margin:0;opacity:.92}.badge{display:inline-block;margin-top:10px;padding:5px 10px;border-radius:999px;background:#ffffff25}
+.card{background:#fff;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 4px 18px #00000012}h2{margin-top:0;color:var(--n)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.section{font-weight:700;color:var(--b);margin:20px 0 10px}
+label{display:block;font-weight:700;margin-bottom:7px}.hint{font-size:13px;color:var(--m);margin-top:5px}
+input{width:100%;padding:13px;border:1px solid var(--l);border-radius:11px;font-size:18px}
+button{width:100%;margin-top:18px;padding:15px;border:0;border-radius:11px;background:var(--g);color:#fff;font-size:20px;font-weight:700}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.result{background:#f7f9fc;border-left:6px solid var(--b);padding:16px;border-radius:12px}
+.result span{font-size:14px;color:var(--m)}.result strong{display:block;color:var(--n);font-size:clamp(20px,3vw,27px);margin-top:8px}
+.major{background:#eef8f3;border-left-color:var(--g)}.major strong{color:var(--g)}
+.summary{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.callout{padding:20px;border-radius:16px;background:#eef8f3;border:1px solid #cce9da}
+.big{font-size:clamp(30px,6vw,48px);font-weight:800;color:var(--g);margin:8px 0}.sub,.note{color:var(--m);line-height:1.65}
+table{width:100%;border-collapse:collapse}td{padding:10px 8px;border-bottom:1px solid #e8edf3}td:last-child{text-align:right;font-weight:700;color:var(--n)}
+.footer{text-align:center;color:var(--m);font-size:12px;padding-bottom:14px}@media(max-width:760px){body{padding:10px}.grid,.results,.summary{grid-template-columns:1fr}.card{padding:16px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<section class="hero"><h1>เครื่องมือวางแผนเกษียณ</h1><p>คำนวณเงินที่ควรมี ณ วันเกษียณ จากค่าใช้จ่ายในค่าเงินปัจจุบัน</p></section>
+<body><div class="wrap">
+<section class="hero"><h1>เครื่องมือวางแผนเกษียณ</h1><p>คำนวณเงินก้อนเป้าหมายและเงินลงทุนต่อเดือนที่ควรเตรียม</p><span class="badge">Version 2.0</span></section>
 
-<section class="card">
-<h2>ข้อมูลสำหรับวางแผน</h2>
-<div class="grid">
+<section class="card"><h2>1) ข้อมูลสำหรับวางแผน</h2>
+<div class="section">เป้าหมายหลังเกษียณ</div><div class="grid">
 <div><label>อายุปัจจุบัน</label><input id="currentAge" type="number" value="40"></div>
 <div><label>อายุที่ต้องการเกษียณ</label><input id="retireAge" type="number" value="60"></div>
 <div><label>อายุขัยที่ใช้วางแผน</label><input id="lifeAge" type="number" value="85"></div>
@@ -47,55 +35,62 @@ button{width:100%;margin-top:18px;padding:15px;border:0;border-radius:11px;backg
 <div><label>เงินเฟ้อเฉลี่ยต่อปี (%)</label><input id="inflation" type="number" step="0.1" value="3"></div>
 <div><label>ผลตอบแทนหลังเกษียณ (%)</label><input id="retireReturn" type="number" step="0.1" value="4"></div>
 </div>
-<button id="calcBtn">คำนวณแผนเกษียณ</button>
-</section>
+<div class="section">เงินลงทุนก่อนเกษียณ</div><div class="grid">
+<div><label>เงินออม/เงินลงทุนที่มีอยู่แล้ว (บาท)</label><input id="currentSavings" type="number" value="1000000"></div>
+<div><label>ผลตอบแทนก่อนเกษียณ (%)</label><input id="preReturn" type="number" step="0.1" value="6"></div>
+<div><label>เงินที่ลงทุนอยู่ต่อเดือน (บาท)</label><input id="currentMonthlySaving" type="number" value="10000"></div>
+</div><button id="calcBtn">คำนวณแผนเกษียณ</button></section>
 
-<section class="card">
-<h2>ผลการคำนวณ</h2>
-<div class="results">
+<section class="card"><h2>2) เงินที่ต้องใช้หลังเกษียณ</h2><div class="results">
 <div class="result"><span>เหลือเวลาก่อนเกษียณ</span><strong id="yearsToRetire">-</strong></div>
 <div class="result"><span>ระยะเวลาที่ต้องใช้เงินหลังเกษียณ</span><strong id="retirementYears">-</strong></div>
 <div class="result"><span>ค่าใช้จ่ายเดือนแรก ณ วันเกษียณ</span><strong id="futureMonthlyExpense">-</strong></div>
 <div class="result"><span>ค่าใช้จ่ายปีแรกหลังเกษียณ</span><strong id="firstYearExpense">-</strong></div>
 <div class="result"><span>ผลตอบแทนจริงหลังหักเงินเฟ้อ</span><strong id="realReturn">-</strong></div>
 <div class="result major"><span>เงินที่ควรมี ณ วันเกษียณ</span><strong id="requiredCapital">-</strong></div>
-</div>
-</section>
+</div></section>
+
+<section class="card"><h2>3) เงินลงทุนปัจจุบันจะเติบโตเป็นเท่าไร</h2><div class="results">
+<div class="result"><span>เงินลงทุนปัจจุบัน</span><strong id="currentSavingsOut">-</strong></div>
+<div class="result"><span>มูลค่าเงินลงทุนเดิม ณ วันเกษียณ</span><strong id="futureCurrentSavings">-</strong></div>
+<div class="result"><span>เงินที่ยังขาดจากเป้าหมาย</span><strong id="capitalGap">-</strong></div>
+</div></section>
+
+<section class="card"><h2>4) ต้องลงทุนเดือนละเท่าไร</h2><div class="summary">
+<div class="callout"><div>เงินลงทุนต่อเดือนที่ควรมี</div><div class="big" id="requiredMonthlySaving">-</div><div class="sub" id="savingMessage">-</div></div>
+<div><table>
+<tr><td>ลงทุนปัจจุบันต่อเดือน</td><td id="currentMonthlySavingOut">-</td></tr>
+<tr><td>จำนวนที่ควรลงทุนต่อเดือน</td><td id="requiredMonthlySavingTable">-</td></tr>
+<tr><td>ส่วนต่างต่อเดือน</td><td id="monthlyDifference">-</td></tr>
+<tr><td>เงินลงทุนรายเดือนคาดว่าจะโตเป็น</td><td id="futureMonthlyContrib">-</td></tr>
+<tr><td>เงินรวมคาดการณ์ ณ วันเกษียณ</td><td id="projectedTotal">-</td></tr>
+</table></div></div></section>
 
 <section class="card note"><b>หลักการคำนวณ</b><br>
-ค่าใช้จ่ายที่กรอกเป็นค่าเงินปัจจุบัน ระบบจะปรับด้วยเงินเฟ้อจนถึงวันเกษียณ
-แล้วคำนวณเงินก้อนสำหรับช่วงหลังเกษียณ โดยสมมติถอนค่าใช้จ่ายช่วงต้นปี
-และเงินที่เหลือยังได้รับผลตอบแทนต่อไป
+ค่าใช้จ่ายหลังเกษียณถูกปรับด้วยเงินเฟ้อถึงวันเกษียณ • เงินก้อนหลังเกษียณใช้วิธีถอนต้นปี (Annuity Due) • เงินลงทุนเดิมโตด้วยผลตอบแทนก่อนเกษียณ • เงินลงทุนรายเดือนสมมติลงทุนปลายเดือน • เป็นประมาณการเพื่อการวางแผน ไม่ใช่การรับประกันผลตอบแทน
 </section>
-<div class="footer">Retirement Planner • Version 1.0</div>
+<div class="footer">Retirement Planner • Version 2.0</div>
 </div>
-
 <script>
 const $=id=>document.getElementById(id);
-const fmt=n=>new Intl.NumberFormat('th-TH',{maximumFractionDigits:0}).format(n)+' บาท';
-function calculate(){
- const currentAge=Number($('currentAge').value),retireAge=Number($('retireAge').value),
- lifeAge=Number($('lifeAge').value),monthlyExpense=Number($('monthlyExpense').value),
- inflation=Number($('inflation').value)/100,retireReturn=Number($('retireReturn').value)/100;
- const yearsToRetire=retireAge-currentAge,retirementYears=lifeAge-retireAge;
- if(yearsToRetire<0||retirementYears<=0||monthlyExpense<=0||inflation<=-1||retireReturn<=-1){
-   alert('กรุณาตรวจสอบข้อมูลที่กรอก'); return;
- }
- const futureMonthlyExpense=monthlyExpense*Math.pow(1+inflation,yearsToRetire);
- const firstYearExpense=futureMonthlyExpense*12;
- const realReturn=(1+retireReturn)/(1+inflation)-1;
- const requiredCapital=Math.abs(realReturn)<1e-10
- ? firstYearExpense*retirementYears
- : firstYearExpense*((1-Math.pow(1+realReturn,-retirementYears))/realReturn)*(1+realReturn);
- $('yearsToRetire').textContent=yearsToRetire+' ปี';
- $('retirementYears').textContent=retirementYears+' ปี';
- $('futureMonthlyExpense').textContent=fmt(futureMonthlyExpense);
- $('firstYearExpense').textContent=fmt(firstYearExpense);
- $('realReturn').textContent=(realReturn*100).toFixed(2)+'%';
- $('requiredCapital').textContent=fmt(requiredCapital);
+const money=n=>new Intl.NumberFormat('th-TH',{maximumFractionDigits:0}).format(Math.max(0,n))+' บาท';
+const signed=n=>(n<0?'-':'')+new Intl.NumberFormat('th-TH',{maximumFractionDigits:0}).format(Math.abs(n))+' บาท';
+function fvMonthly(pmt,a,m){if(m<=0)return 0;const r=a/12;return Math.abs(r)<1e-12?pmt*m:pmt*((Math.pow(1+r,m)-1)/r)}
+function reqPmt(fv,a,m){if(fv<=0)return 0;if(m<=0)return Infinity;const r=a/12;return Math.abs(r)<1e-12?fv/m:fv/((Math.pow(1+r,m)-1)/r)}
+function calc(){
+ const ca=+$('currentAge').value,ra=+$('retireAge').value,la=+$('lifeAge').value,me=+$('monthlyExpense').value;
+ const inf=+$('inflation').value/100,rr=+$('retireReturn').value/100,cs=+$('currentSavings').value,pr=+$('preReturn').value/100,cms=+$('currentMonthlySaving').value;
+ const yrs=ra-ca,retY=la-ra,months=yrs*12;
+ if(yrs<0||retY<=0||me<=0||cs<0||cms<0||inf<=-1||rr<=-1||pr<=-1){alert('กรุณาตรวจสอบข้อมูลที่กรอก');return}
+ const fm=me*Math.pow(1+inf,yrs),fy=fm*12,real=(1+rr)/(1+inf)-1;
+ const cap=Math.abs(real)<1e-12?fy*retY:fy*((1-Math.pow(1+real,-retY))/real)*(1+real);
+ const fcs=cs*Math.pow(1+pr,yrs),gap=Math.max(0,cap-fcs),rpm=reqPmt(gap,pr,months),fmc=fvMonthly(cms,pr,months),proj=fcs+fmc,diff=cms-rpm;
+ $('yearsToRetire').textContent=yrs+' ปี';$('retirementYears').textContent=retY+' ปี';$('futureMonthlyExpense').textContent=money(fm);$('firstYearExpense').textContent=money(fy);$('realReturn').textContent=(real*100).toFixed(2)+'%';$('requiredCapital').textContent=money(cap);
+ $('currentSavingsOut').textContent=money(cs);$('futureCurrentSavings').textContent=money(fcs);$('capitalGap').textContent=money(gap);
+ const rt=Number.isFinite(rpm)?money(rpm):'คำนวณไม่ได้';$('requiredMonthlySaving').textContent=rt;$('requiredMonthlySavingTable').textContent=rt;$('currentMonthlySavingOut').textContent=money(cms);$('monthlyDifference').textContent=signed(diff);$('futureMonthlyContrib').textContent=money(fmc);$('projectedTotal').textContent=money(proj);
+ $('savingMessage').textContent=!Number.isFinite(rpm)?'ไม่มีช่วงเวลาให้สะสมเพิ่ม':gap<=0?'เงินลงทุนเดิมคาดว่าเพียงพอต่อเป้าหมาย แม้ยังไม่รวมเงินลงทุนรายเดือนใหม่':diff>=0?'เงินที่ลงทุนอยู่ต่อเดือนปัจจุบันไม่น้อยกว่าจำนวนที่แบบจำลองคำนวณว่าต้องใช้':'ควรเพิ่มเงินลงทุนต่อเดือนประมาณ '+money(Math.abs(diff))+' เพื่อให้เข้าใกล้เป้าหมาย';
 }
-$('calcBtn').addEventListener('click',calculate);
-calculate();
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}
+$('calcBtn').onclick=calc;calc();
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}
 </script>
 </body></html>
